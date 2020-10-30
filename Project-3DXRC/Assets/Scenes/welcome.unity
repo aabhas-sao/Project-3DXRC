@@ -144,15 +144,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179629836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1882488932}
   - {fileID: 2031666711}
   - {fileID: 323888007}
-  m_Father: {fileID: 2044218204}
-  m_RootOrder: 3
+  m_Father: {fileID: 1137494544}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 1137494546}
   - component: {fileID: 1137494545}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +496,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1994708013}
+  - {fileID: 1137778433}
+  - {fileID: 179629837}
+  - {fileID: 2055116539}
   m_Father: {fileID: 2044218204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -554,7 +558,7 @@ GameObject:
   - component: {fileID: 1137778435}
   - component: {fileID: 1137778434}
   m_Layer: 5
-  m_Name: Image
+  m_Name: police_car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,12 +571,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137778432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2044218204}
-  m_RootOrder: 2
+  m_Father: {fileID: 1137494544}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -702,7 +706,7 @@ GameObject:
   - component: {fileID: 1994708015}
   - component: {fileID: 1994708014}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -719,8 +723,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2044218204}
-  m_RootOrder: 1
+  m_Father: {fileID: 1137494544}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.003, y: 0.038000003, z: 1.9980001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -909,7 +913,7 @@ GameObject:
   - component: {fileID: 2044218201}
   - component: {fileID: 2044218205}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: welcome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,10 +991,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1137494544}
-  - {fileID: 1994708013}
-  - {fileID: 1137778433}
-  - {fileID: 179629837}
-  - {fileID: 2055116539}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1102,12 +1102,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055116538}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2044218204}
-  m_RootOrder: 4
+  m_Father: {fileID: 1137494544}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1135,8 +1135,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: chase
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16dd583d6809f6d4aa1fd768c77a01cd, type: 2}
-  m_sharedMaterial: {fileID: 5932305619117998865, guid: 16dd583d6809f6d4aa1fd768c77a01cd,
+  m_fontAsset: {fileID: 11400000, guid: 2478eee517034e9408fa59b271b84c69, type: 2}
+  m_sharedMaterial: {fileID: 1164184836269297215, guid: 2478eee517034e9408fa59b271b84c69,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
