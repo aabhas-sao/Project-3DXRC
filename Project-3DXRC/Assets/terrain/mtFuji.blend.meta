@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: dd999cb23624efd4d965f5ef2c8a6c0a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 3d5bcc2686d84ca4cb93a5c859cf592f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rastMat
-    second: {fileID: 2100000, guid: 0aec7a9f56941f54394a4ccc7578e141, type: 2}
+      name: mat
+    second: {fileID: 2100000, guid: b707afe3a5353cb4bb847de5530db3a3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

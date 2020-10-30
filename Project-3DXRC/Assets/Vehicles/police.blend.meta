@@ -3,7 +3,12 @@ guid: 05010f58c5f4f804fbc8df6759c69edf
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: policeCar
+    second: {fileID: 2100000, guid: a8c992b662b28d6429a05c86d8e9526a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
