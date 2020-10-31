@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 1e21a613e3d91474880918170ae4074e
+guid: f8bc63c60eb43f94a8594c7a51e51872
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: policeCar
-    second: {fileID: 2100000, guid: d55d8cd72a31a2c40a5e8d06c08e3c46, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
