@@ -386,7 +386,7 @@ Camera:
   m_GameObject: {fileID: 950556281}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1362,7 +1362,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bcfe3d3dccf2436479473d3288d58c32, type: 2}
+      objectReference: {fileID: 2100000, guid: 4aba893613620854fafe6bd9fbe0f89e, type: 2}
     - target: {fileID: 6027811986409945684, guid: 85f5b502fb51cd042a7a84150943f941,
         type: 3}
       propertyPath: m_Name
