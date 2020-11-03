@@ -430,8 +430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 127113886968710819}
-  distance: 40
-  height: 15
+  distance: 60
+  height: 30
   heightDamping: 2
   lookAtHeight: 0
   parentRigidbody: {fileID: 758937645596957723}
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cbe2bf6d5a0041aa66cbe9aaefb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 4
   rotatingSpeed: 2
 --- !u!1 &1444092677
 GameObject:
@@ -1167,7 +1167,7 @@ PrefabInstance:
     - target: {fileID: 5328709232410242418, guid: d99981acea5763b4083808299878aabc,
         type: 3}
       propertyPath: motorForce
-      value: -4000
+      value: -1000
       objectReference: {fileID: 0}
     - target: {fileID: 5328709232410242423, guid: d99981acea5763b4083808299878aabc,
         type: 3}
@@ -1290,6 +1290,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 6027811986409945682, guid: 85f5b502fb51cd042a7a84150943f941,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcfe3d3dccf2436479473d3288d58c32, type: 2}
     - target: {fileID: 6027811986409945684, guid: 85f5b502fb51cd042a7a84150943f941,
         type: 3}
       propertyPath: m_Name
