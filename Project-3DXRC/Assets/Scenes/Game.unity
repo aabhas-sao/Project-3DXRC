@@ -154,6 +154,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05491637, y: 0.115421616, z: 0.042677235}
   m_Center: {x: 0, y: -0.0002821514, z: 0.005039235}
+--- !u!114 &323102916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323102909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45c1a1bb060d5e449819230886a0947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466058610
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +280,11 @@ PrefabInstance:
     - target: {fileID: 5547841958344573848, guid: 91e2012b0c7b2ac41bb7f646bbb3186e,
         type: 3}
       propertyPath: m_Name
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547841958344573848, guid: 91e2012b0c7b2ac41bb7f646bbb3186e,
+        type: 3}
+      propertyPath: m_TagString
       value: enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -471,6 +488,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05491637, y: 0.115421616, z: 0.042677235}
   m_Center: {x: 0, y: -0.0002821514, z: 0.005039235}
+--- !u!114 &1090694299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090694292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45c1a1bb060d5e449819230886a0947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1105602993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -553,6 +582,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5547841958344573848, guid: 91e2012b0c7b2ac41bb7f646bbb3186e,
+        type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -885805744468186734, guid: 91e2012b0c7b2ac41bb7f646bbb3186e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 91e2012b0c7b2ac41bb7f646bbb3186e, type: 3}
@@ -589,6 +623,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   rotatingSpeed: 2
+--- !u!114 &1320182797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320182790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45c1a1bb060d5e449819230886a0947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1444092677
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +760,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05491637, y: 0.115421616, z: 0.042677235}
   m_Center: {x: 0, y: -0.0002821514, z: 0.005039235}
+--- !u!114 &1774162545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774162538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45c1a1bb060d5e449819230886a0947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1852496968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -795,6 +853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547841958344573848, guid: 91e2012b0c7b2ac41bb7f646bbb3186e,
+        type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -885805744468186734, guid: 91e2012b0c7b2ac41bb7f646bbb3186e, type: 3}
@@ -880,6 +943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547841958344573848, guid: 91e2012b0c7b2ac41bb7f646bbb3186e,
+        type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -885805744468186734, guid: 91e2012b0c7b2ac41bb7f646bbb3186e, type: 3}
