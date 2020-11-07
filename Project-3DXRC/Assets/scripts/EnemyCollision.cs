@@ -8,7 +8,8 @@ public class EnemyCollision : MonoBehaviour
     void OnCollisionEnter(Collision collision) {
         if(collision.collider.tag == "enemy") {
             Destroy(gameObject);
-            Instantiate(explosionEffect, transform.position, transform.rotation);
+            GameObject clone = (GameObject)Instantiate(explosionEffect, transform.position, transform.rotation);
+            Destroy(clone, 2.0f);
         }
     }
 }

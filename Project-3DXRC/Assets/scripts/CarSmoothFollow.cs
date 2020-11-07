@@ -7,7 +7,7 @@ public class CarSmoothFollow : MonoBehaviour {
 	public float distance = 20.0f;
 	public float height = 5.0f;
 	public float heightDamping = 2.0f;
- 
+	public Quaternion rotationOffset;
 	public float lookAtHeight = 0.0f;
  
 	public Rigidbody parentRigidbody;
@@ -35,11 +35,10 @@ public class CarSmoothFollow : MonoBehaviour {
  
 	void Start () {
  
-		lookAtVector =  new Vector3(0,lookAtHeight,0);
- 
+		lookAtVector =  new Vector3(0,lookAtHeight,0);	
 	}
  
-	void LateUpdate () {
+	void FixedUpdate () {
  
 		wantedHeight = target.position.y + height;
 		currentHeight = transform.position.y;
