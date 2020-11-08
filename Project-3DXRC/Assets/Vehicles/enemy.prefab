@@ -206,8 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cbe2bf6d5a0041aa66cbe9aaefb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  rotatingSpeed: 1.94
+  speed: 12
+  rotatingSpeed: 2
 --- !u!114 &168934356234768189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 2276163294515471970, guid: 42aeb22981b60d34bb3fa29a9dad2746,
     type: 3}
+  cars_destryoed: 0
 --- !u!65 &-2457422413433948332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -233,8 +234,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.056520525, y: 0.114505656, z: 0.040652126}
-  m_Center: {x: -0.00016041312, y: 0.0001758371, z: 0.005064951}
+  m_Size: {x: 0.056520525, y: 0.11594631, z: 0.04305265}
+  m_Center: {x: -0.00016041312, y: 0.00041594505, z: 0.0053050024}
 --- !u!64 &2596324891355089522
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -247,7 +248,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: -1550514412580984892, guid: 63f0c281305d4f340af19c22352dd46a, type: 3}
 --- !u!1 &7792632340959890052
 GameObject:

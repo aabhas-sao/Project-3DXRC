@@ -6,6 +6,8 @@ TagManager:
   tags:
   - player
   - enemy
+  - score_ui
+  - game_over_ui
   layers:
   - Default
   - TransparentFX
