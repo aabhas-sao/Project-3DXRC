@@ -9,6 +9,8 @@ TagManager:
   - score_ui
   - game_over_ui
   - pause_ui
+  - building
+  - ground
   layers:
   - Default
   - TransparentFX

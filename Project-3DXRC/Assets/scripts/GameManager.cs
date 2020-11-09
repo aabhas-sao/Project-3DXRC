@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
             // settings_ui = GameObject.FindWithTag("settings_ui");
             Debug.Log("Paused (PauseMenu)");
             score_ui.SetActive(false);
-            
+            isPaused = 1;
             Time.timeScale = 0f;
             pause_ui.SetActive(true);
             // settings_ui.SetActive(false);
@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         }
         else if(isPaused==1)
         {
+            Time.timeScale = 1f;
             isPaused = 0;
             Debug.Log("Resumed");
             pause_ui.SetActive(false);
