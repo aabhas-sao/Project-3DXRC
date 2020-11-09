@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - score_ui
   - game_over_ui
+  - pause_ui
   layers:
   - Default
   - TransparentFX
