@@ -13,12 +13,23 @@ public class EnemyCollision : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
     void OnCollisionEnter(Collision collision) {
+        if(gameManager.isInvincible) {
+            if(collision.collider.tag == "player") {
+                ExplodeEnemy();
+            }
+            return;
+        }
+
         if(collision.collider.tag == "enemy" || collision.collider.tag == "building" || collision.collider.tag == "ground") {
-            Destroy(gameObject);
-            GameObject clone = (GameObject)Instantiate(explosionEffect, transform.position, transform.rotation);
-            Destroy(clone, 2.0f);
-            gameManager.explosions++;
-            gameManager.ExplosionCount();
+            ExplodeEnemy();
         }
     }
+    
+    void ExplodeEnemy() {
+        Destroy(gameObject);
+        GameObject clone = (GameObject)Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(clone, 2.0f);
+        gameManager.explosions++;
+        gameManager.ExplosionCount();
+    }   
 }

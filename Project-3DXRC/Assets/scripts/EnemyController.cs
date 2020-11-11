@@ -15,10 +15,14 @@ public class EnemyController : MonoBehaviour
     public Transform rearRightWheelTransform;
 
     public float maxSteeringAngle = 30f;
-    [SerializeField]private float motorForce = 10f;
 
     private GameObject target;
     public float turnMultiplier = -1;
+    private GameManager gameManager;
+
+    private void Start() {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void FixedUpdate()
     {
@@ -47,8 +51,8 @@ public class EnemyController : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = motorForce * 1;
-        frontRightWheelCollider.motorTorque = motorForce * 1;
+        frontLeftWheelCollider.motorTorque  = gameManager.currentEnemyMotorForce * 1;
+        frontRightWheelCollider.motorTorque = gameManager.currentEnemyMotorForce * 1;
     }
 
     private void UpdateWheels()

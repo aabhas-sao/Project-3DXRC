@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 53318398568801625}
   - component: {fileID: 862083505971003361}
   - component: {fileID: 862083505971003360}
-  - component: {fileID: -9208988331015435281}
   - component: {fileID: -5834545699302248290}
+  - component: {fileID: 2612174226430236386}
   m_Layer: 0
   m_Name: enemyWheeled
   m_TagString: enemy
@@ -64,7 +64,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.5654297, y: 3.4449632, z: 11.241699}
   m_Center: {x: -0.018554753, y: 0.11369987, z: -0.037109517}
---- !u!114 &-9208988331015435281
+--- !u!114 &-5834545699302248290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862083505971003363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45c1a1bb060d5e449819230886a0947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 2276163294515471970, guid: 42aeb22981b60d34bb3fa29a9dad2746,
+    type: 3}
+  cars_destryoed: 0
+--- !u!114 &2612174226430236386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,26 +97,11 @@ MonoBehaviour:
   rearRightWheelCollider: {fileID: 7412574949932909390}
   frontLeftWheelTransform: {fileID: 1184731162798425167}
   frontRightWheelTransform: {fileID: 2956306697099734779}
-  rearLeftWheelTransform: {fileID: 2082744976222999231}
+  rearLeftWheelTransform: {fileID: 2343005052275367249}
   rearRightWheelTransform: {fileID: 2082744976222999231}
   maxSteeringAngle: 30
-  motorForce: -4000
-  turnMultiplier: 10
---- !u!114 &-5834545699302248290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862083505971003363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45c1a1bb060d5e449819230886a0947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionEffect: {fileID: 2276163294515471970, guid: 42aeb22981b60d34bb3fa29a9dad2746,
-    type: 3}
-  cars_destryoed: 0
+  motorForce: 10
+  turnMultiplier: -1
 --- !u!1 &917527319886754006
 GameObject:
   m_ObjectHideFlags: 0

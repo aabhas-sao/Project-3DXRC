@@ -8,13 +8,16 @@ public class Damage : MonoBehaviour
 
     [SerializeField]private int life = 3;
     private int currentLife;
-    private float invincibleTime = 2;
-    private float currentInvincibleTime = 0;
+    public float invincibleTime = 4;
+    public float currentInvincibleTime = 0;
     private bool isColliding = false;
     [SerializeField]    private GameObject smokeEffect, fireEffect, explosionEffect;    
     private GameManager gameManager;
     public Image[] playerHealth;
     private int iterator;
+    
+    public bool isInvincible; // checking if invincible powerup is active
+    private EnemyController enemyController;
 
     void Awake() {
         gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -23,15 +26,15 @@ public class Damage : MonoBehaviour
     void Start()
     {
         currentLife = life;
-        for(int i=0; i < playerHealth.Length; i++) {
-            playerHealth[i].enabled = false;
-            Debug.Log("disabline" + i);
-        }
-        iterator = 0;
+        DisableAllHealthBars();
         playerHealth[0].enabled = true;
     }
 
     private void OnCollisionEnter(Collision other) {
+        if(gameManager.isInvincible) {
+            return;
+        }
+        
         if(other.collider.CompareTag("enemy")) {
             if(currentInvincibleTime <= 0) {
                 ReduceLife();
@@ -42,30 +45,52 @@ public class Damage : MonoBehaviour
 
 
     void Update() {
-        if(currentInvincibleTime > 0) {
+        if(currentInvincibleTime >= 0) {
             currentInvincibleTime -= Time.deltaTime;
+            gameManager.currentEnemyMotorForce = 2000f;
+        } else {
+            gameManager.currentEnemyMotorForce = gameManager.defaultEnemyMotorForce;
         }
     }
     public void ReduceLife() {
         currentLife--;
-        
-        if(iterator<2) {
-            playerHealth[iterator].enabled = false;
-            iterator++;
-            playerHealth[iterator].enabled = true;
-        }
+        HealthVisual();
+    }
 
-        Debug.Log(currentLife);
+    public void DisableAllHealthBars() {
+        for(int i=0; i < playerHealth.Length; i++) {
+            playerHealth[i].enabled = false;
+        }
+    }
+
+    public void HealthVisual() {
         currentInvincibleTime = invincibleTime;
+        if(currentLife == 3) {
+            // smokeEffect.SetActive(false);
+            // fireEffect.SetActive(false);
+            DisableAllHealthBars();
+            playerHealth[0].enabled = true;
+        }
+        if(currentLife == 2) {    
+            DisableAllHealthBars();
+            playerHealth[1].enabled = true;
+            // smokeEffect.SetActive(true);
+        } else if(currentLife == 1) {
+            // smokeEffect.SetActive(false);
+            // fireEffect.SetActive(true);
+            DisableAllHealthBars();
+            playerHealth[2].enabled = true;
+        }
         if(currentLife <=0) {
+            // explosionEffect.SetActive(true);
             Debug.Log("player dead");
             GameManager.alive = false;
         }
+    }
 
-        // if(currentLife==2) {
-        //     smokeEffect.SetActive(true);
-        // } else if(currentLife == 1) {
-        //     smokeEffect.SetActive(false);
-        // }
+    public void IncreaseLife() {
+        if(currentLife == 3) return;
+        currentLife++;
+        HealthVisual();
     }
 }

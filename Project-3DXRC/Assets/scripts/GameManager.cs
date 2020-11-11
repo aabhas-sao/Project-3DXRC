@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
     static GameManager instance;
     [SerializeField]private EnemyCollision enemyCollision;
 
+    public bool isInvincible = false; // checking if invincible powerup is active
+    public float powerupActiveTime = 10f; // for how longer powerups is in effect
+
+    public float currentEnemyMotorForce = -2000f;
+    public float defaultEnemyMotorForce = -2000f;
+
     void Awake() {
         if(instance == null) {
             instance = this;
@@ -25,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        currentEnemyMotorForce = defaultEnemyMotorForce;
         // DontDestroyOnLoad(gameObject);
         Time.timeScale = 1f;
         isPaused = 0;
