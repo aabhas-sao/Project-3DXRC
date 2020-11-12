@@ -11,6 +11,7 @@ TagManager:
   - pause_ui
   - building
   - ground
+  - high_score
   layers:
   - Default
   - TransparentFX

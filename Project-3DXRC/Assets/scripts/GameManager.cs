@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject settings_ui;
     public static bool alive = true;
     public int isPaused = 1, explosions =0, multiplier = 10, multiplierPowerUp = 1, per_car_multiplier=5;
-    float timer, score;
+    float timer, score, final_score;
+    int final_score_int;
     public Text score_live, score_end, explosion_count, total, game_over_explosion;
     static GameManager instance;
     [SerializeField]private EnemyCollision enemyCollision;
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
             }
             timer += Time.deltaTime * multiplier * multiplierPowerUp;
             score_live.text = (timer).ToString("0");
+            
             currentPowerupCooldown -= Time.deltaTime;
 
             if(currentPowerupCooldown <= 0) {
@@ -84,7 +86,17 @@ public class GameManager : MonoBehaviour
             score_ui.SetActive(false);  
             score_end.text = (timer).ToString("0");
             game_over_explosion.text = explosions.ToString("0");
-            total.text = (timer + explosions * per_car_multiplier).ToString("0");
+            final_score = timer + explosions * per_car_multiplier;
+            total.text = (final_score).ToString("0");
+            final_score_int = (int) final_score;
+            
+            // if score greater than highscore set highscore
+            if(explosions > PlayerPrefs.GetInt("PoliceCars", 0)) {
+                PlayerPrefs.SetInt("PoliceCars", explosions);
+            }
+            if(final_score_int > PlayerPrefs.GetInt("TotalScore", 0)) {
+                PlayerPrefs.SetInt("TotalScore", final_score_int);
+            }
         }
     }
 
