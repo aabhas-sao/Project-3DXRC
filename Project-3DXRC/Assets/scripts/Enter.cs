@@ -3,7 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class Enter : MonoBehaviour
 {
-    // Update is called once per frame
+    private AudioManager audioManager;
+
+    void Start() {
+        GameObject.FindObjectOfType<AudioManager>().Play("ui");
+    }
+
     void Update()
     {
         if(Input.GetKey(KeyCode.Return)) {

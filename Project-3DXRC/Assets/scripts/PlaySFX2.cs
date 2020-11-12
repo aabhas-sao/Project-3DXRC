@@ -3,11 +3,16 @@ using UnityEngine.EventSystems;
 
 public class PlaySFX2 : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
+    private AudioManager audioManager;
+    void Start() {
+        audioManager = (AudioManager) FindObjectOfType(typeof(AudioManager));
+    }
+
     public void OnPointerEnter(PointerEventData eventData) {
-        FindObjectOfType<AudioManager>().Play("hoverSFX");
+        audioManager.Play("hoverSFX");
     }
 
     public void OnPointerClick(PointerEventData eventData) {
-        FindObjectOfType<AudioManager>().Play("carStartSFX");
+        audioManager.Play("carStartSFX");
     }
 }

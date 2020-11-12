@@ -7,9 +7,14 @@ public class StarPowerUp : MonoBehaviour
     
     private int defaultMultiplierPowerUp;
     // public GameObject pickUpEffect;
+    public GameObject star_ui;
+    private GameObject power_up_ui;
+    private float width = Screen.width;
+    private float height = Screen.height;
 
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("player")) {
+            power_up_ui = Instantiate(star_ui, new Vector3(width/2, height - height/5, 0f), Quaternion.identity, GameObject.FindGameObjectWithTag("score_ui").transform);
             StartCoroutine( PickUp( other ) );
         }
     }
@@ -29,5 +34,6 @@ public class StarPowerUp : MonoBehaviour
         gameManager.multiplierPowerUp = 1;
 
         Destroy(gameObject);
+        Destroy(power_up_ui);
     }
 }

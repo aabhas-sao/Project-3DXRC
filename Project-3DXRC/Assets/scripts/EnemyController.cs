@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 relativeVector = transform.InverseTransformPoint(target.transform.position);
         relativeVector /= relativeVector.magnitude;
-        print(relativeVector);
+        //print(relativeVector);
         steerAngle = -maxSteeringAngle * relativeVector.x;
 
         frontLeftWheelCollider.steerAngle = steerAngle;

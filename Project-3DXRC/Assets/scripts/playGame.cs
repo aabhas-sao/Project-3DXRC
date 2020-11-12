@@ -4,6 +4,6 @@ using UnityEngine;
 public class playGame : MonoBehaviour
 {
     public void PlayGame() {
-        SceneManager.LoadScene("Garage");
+        SceneManager.LoadScene("City");
     }
 }

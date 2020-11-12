@@ -6,9 +6,14 @@ public class InvinciblePowerUp : MonoBehaviour
 {
     // public GameObject pickUpEffect;
     private bool defaultInvincibility;
-    
+    public GameObject invincible_ui;
+    private GameObject invincible;
+    private float width = Screen.width;
+    private float height = Screen.height;
+
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("player")) {
+            invincible = Instantiate(invincible_ui, new Vector3(width/2, height - height/5, 0f), Quaternion.identity, GameObject.FindGameObjectWithTag("score_ui").transform);
             StartCoroutine( PickUp(other) );
         }
     }
@@ -29,5 +34,6 @@ public class InvinciblePowerUp : MonoBehaviour
         gameManager.isInvincible = false;
 
         Destroy(gameObject);
+        Destroy(invincible);
     }
 }

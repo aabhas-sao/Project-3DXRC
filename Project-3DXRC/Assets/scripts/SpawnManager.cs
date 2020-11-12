@@ -37,6 +37,7 @@ public class SpawnManager : MonoBehaviour
             Transform spawnPoint = transform.GetChild(i);
             if (Vector3.Distance(player.transform.position, spawnPoint.position) <= spawnDistance)
             {
+                Debug.Log(Vector3.Distance(player.transform.position, spawnPoint.position));
                 near.Add(spawnPoint);
             }
         }

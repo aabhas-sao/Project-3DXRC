@@ -18,7 +18,14 @@ public class GameManager : MonoBehaviour
 
     public float currentEnemyMotorForce = -2000f;
     public float defaultEnemyMotorForce = -2000f;
-
+    private AudioManager audioManager;
+    public GameObject invincible_ui;
+    public GameObject star_ui;
+    
+    public float powerupCooldown = 30f; // after how much time a new powerup should be spawned
+    [SerializeField] private float currentPowerupCooldown;
+    private SpawnPowerUp spawnPowerUp;
+     
     void Awake() {
         if(instance == null) {
             instance = this;
@@ -27,11 +34,17 @@ public class GameManager : MonoBehaviour
             return;
         }
         enemyCollision = GameObject.FindObjectOfType<EnemyCollision>();
+        audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
+        audioManager.StopPlaying("ui");
+        audioManager.Play("game");
+
+        spawnPowerUp = GameObject.FindObjectOfType<SpawnPowerUp>();
     }
 
     void Start()
     {
         currentEnemyMotorForce = defaultEnemyMotorForce;
+        currentPowerupCooldown = powerupCooldown;
         // DontDestroyOnLoad(gameObject);
         Time.timeScale = 1f;
         isPaused = 0;
@@ -55,9 +68,14 @@ public class GameManager : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Escape)) {
                 Pause();
             }
-
             timer += Time.deltaTime * multiplier * multiplierPowerUp;
             score_live.text = (timer).ToString("0");
+            currentPowerupCooldown -= Time.deltaTime;
+
+            if(currentPowerupCooldown <= 0) {
+                StartCoroutine( spawnPowerUp.PowerUpPos() );
+                currentPowerupCooldown = powerupCooldown;
+            }
         }
         else
         {
@@ -88,6 +106,8 @@ public class GameManager : MonoBehaviour
             // settings_ui.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            // AudioListener.pause = true;
+            audioManager.StopPlaying("game");
         }
         else if(isPaused==1)
         {
@@ -98,6 +118,8 @@ public class GameManager : MonoBehaviour
             score_ui.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            // AudioListener.pause = false;
+            audioManager.Play("game");
         }
     }
 
@@ -120,6 +142,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("MainMenu");
         SceneManager.LoadScene("Game Menu");
+        // if(AudioListener.pause) {
+        //     AudioListener.pause = false;
+        // }
+        audioManager.StopPlaying("game");
+        audioManager.Play("ui");
     }
     
     public void PlayGame() {
