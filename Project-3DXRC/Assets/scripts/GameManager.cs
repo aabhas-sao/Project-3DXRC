@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //GameManager singleton
+    static GameManager instance;
+    
     [SerializeField]private GameObject pause_ui, score_ui, game_over_ui, player;
-    public static bool alive = true;
+    
+    public static bool alive = true; // check if player is alive
     public int isPaused = 1, explosions =0, multiplier = 10, multiplierPowerUp = 1, per_car_multiplier=5;
     float timer, score, final_score;
     int final_score_int;
     public Text score_live, score_end, explosion_count, total, game_over_explosion;
-    static GameManager instance;
     [SerializeField]private EnemyCollision enemyCollision;
 
     public bool isInvincible = false; // checking if invincible powerup is active
@@ -18,10 +21,8 @@ public class GameManager : MonoBehaviour
 
     public float currentEnemyMotorForce = -2000f;
     public float defaultEnemyMotorForce = -2000f;
+
     private AudioManager audioManager;
-    
-    public GameObject invincible_ui;
-    public GameObject star_ui;
     
     public float powerupCooldown = 30f; // after how much time a new powerup should be spawned
     [SerializeField] private float currentPowerupCooldown;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         // set ref for pause_ui, score_ui, game_over_ui
         pause_ui = GameObject.FindWithTag("pause_ui");
         score_ui = GameObject.FindWithTag("score_ui");
@@ -78,7 +80,7 @@ public class GameManager : MonoBehaviour
             currentPowerupCooldown -= Time.deltaTime;
 
             if(currentPowerupCooldown <= 0) {
-                spawnPowerUp.PowerUpPos();
+                spawnPowerUp.PowerUpPos(); // spawn a powerup after cooldown
                 currentPowerupCooldown = powerupCooldown;
             }
         }
@@ -86,6 +88,8 @@ public class GameManager : MonoBehaviour
         else
         {
             audioManager.StopPlaying("game");
+            audioManager.StopPlaying("engineCut");
+            audioManager.StopPlaying("tireSqueal");
             Time.timeScale = 0f;
             game_over_ui.SetActive(true);
             score_ui.SetActive(false);  

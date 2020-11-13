@@ -11,11 +11,13 @@ public class Damage : MonoBehaviour
     public float invincibleTime = 4;
     public float currentInvincibleTime = 0;
     // private bool isColliding = false;
-    [SerializeField]    private GameObject smokeEffect, fireEffect, explosionEffect;    
+    public GameObject smokeEffect, fireEffect;    
     private GameManager gameManager;
     public Image[] playerHealth;
     private int iterator;
     
+
+
     public bool isInvincible; // checking if invincible powerup is active
     private EnemyController enemyController;
     private AudioManager audioManager;
@@ -69,18 +71,19 @@ public class Damage : MonoBehaviour
     public void HealthVisual() {
         currentInvincibleTime = invincibleTime;
         if(currentLife == 3) {
-            // smokeEffect.SetActive(false);
-            // fireEffect.SetActive(false);
+            smokeEffect.SetActive(false);
+            fireEffect.SetActive(false);
             DisableAllHealthBars();
             playerHealth[0].enabled = true;
         }
         if(currentLife == 2) {    
             DisableAllHealthBars();
             playerHealth[1].enabled = true;
-            // smokeEffect.SetActive(true);
+            smokeEffect.SetActive(true);
+            fireEffect.SetActive(false);
         } else if(currentLife == 1) {
-            // smokeEffect.SetActive(false);
-            // fireEffect.SetActive(true);
+            smokeEffect.SetActive(false);
+            fireEffect.SetActive(true);
             DisableAllHealthBars();
             playerHealth[2].enabled = true;
         }

@@ -10,8 +10,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemy;                // The enemy prefab to be spawned.
     public float spawnTime = 3f;            // How long between each spawn.
     public float spawnDelay = 6f;
-    public float spawnDistance = 10;
-    public float minSpawnDistance = 10;
+    public float spawnDistance = 1f;
+    public float minSpawnDistance = 0.1f;
     public float distance;
     void Start()
     {

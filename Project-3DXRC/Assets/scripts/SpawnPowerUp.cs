@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class SpawnPowerUp : MonoBehaviour
 {
-    private float angle; 
+    // private float angle; 
     // private float spawnCollisionCheckRadius = 1f;
     // create a vector with length 1.0
-    Vector3 spawnPoint;
-    [SerializeField] private float minLength = -30;
-    [SerializeField] private float maxLength = -90;
-    [SerializeField] private float length = -5;
-    [SerializeField] private float powerUpPickableTime = 12;
-    [SerializeField] private float currentPowerUpPickableTime = 12;
+    [SerializeField]private Vector3 spawnPoint;
+
+    // [SerializeField] private float minLength = -30;
+    // [SerializeField] private float maxLength = -90;
+
+    public float length = -1;
+    // public float powerUpPickableTime = 12;
+    // [SerializeField] private float currentPowerUpPickableTime = 12;
     public GameObject[] powerups;
     private GameObject player;
     private AudioManager audioManager;
@@ -25,15 +27,15 @@ public class SpawnPowerUp : MonoBehaviour
 
     void Start() {
         player = GameObject.FindWithTag("player");
-        currentPowerUpPickableTime = powerUpPickableTime;
+        // currentPowerUpPickableTime = powerUpPickableTime;
     }
-    void Update() {
-        currentPowerUpPickableTime -= Time.deltaTime;
-        if(currentPowerUpPickableTime <= 0) {
-            currentPowerUpPickableTime = powerUpPickableTime;
-            Destroy(gameObject);
-        }
-    }
+    // void Update() {
+    //     currentPowerUpPickableTime -= Time.deltaTime;
+    //     if(currentPowerUpPickableTime <= 0) {
+    //         currentPowerUpPickableTime = powerUpPickableTime;
+    //         Destroy(gameObject);
+    //     }
+    // }
     // private Vector3 GeneratePoint(float playerPos) {
     //     angle = Random.Range(-Mathf.PI/6,  Mathf.PI/6); 
     //     spawnPoint = new Vector3(Mathf.Sin(angle),0,Mathf.Cos(angle));
@@ -51,14 +53,14 @@ public class SpawnPowerUp : MonoBehaviour
     public void PowerUpPos() {
         int life = player.GetComponent<Damage>().currentLife;
         // if health is full dont randomly spawn heart
-        
-        if(life < 3) {
+        print(life);
+        if(life == 3) {
             powerup = powerups[Random.Range(0, 2)];
         } else {
             powerup = powerups[Random.Range(0, 3)];
         }
         
-        length = Random.Range(minLength, maxLength);
+        // length = Random.Range(minLength, maxLength);
         // print("try");
         // bool foundPosition = false;
         // int count = 0;
@@ -77,7 +79,5 @@ public class SpawnPowerUp : MonoBehaviour
     
         audioManager.Play("powerUp");
         GameObject clone = (GameObject)Instantiate(powerup, player.transform.position + (player.transform.forward * length) , Quaternion.identity);
-        // yield return new WaitForSeconds(powerUpPickableTime);
-        // Destroy(clone);
     }
 }

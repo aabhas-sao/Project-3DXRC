@@ -44,6 +44,7 @@ public class StarPowerUp : MonoBehaviour
         gameManager.multiplierPowerUp = 1;
         Destroy(gameObject);
     }
+    
     IEnumerator DestroyPowerUp() {
         yield return new WaitForSeconds(12);
         Destroy(gameObject);
