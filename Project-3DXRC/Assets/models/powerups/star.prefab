@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6100580536682673078}
   - component: {fileID: 907176967864906529}
   m_Layer: 0
-  m_Name: Glowing Star 7
+  m_Name: star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1642927703490655553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.6274056, y: 1.3194251, z: -5.5464964}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

@@ -293,93 +293,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323888006}
   m_CullTransparentMesh: 0
---- !u!1 &484440134
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 484440136}
-  - component: {fileID: 484440135}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &484440135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484440134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c95864e992f034e82efb7858985e23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: hoverSFX
-    clip: {fileID: 8300000, guid: d185f1d502a61d14ca265eb7032d43ea, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: carStartSFX
-    clip: {fileID: 8300000, guid: 22329f4950201dc4db9bf96c37254069, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: clickSFX
-    clip: {fileID: 8300000, guid: 7600490ba1659564082adb33053ea71d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: ui
-    clip: {fileID: 8300000, guid: d6a31c5a8d7d9494292710106afe767c, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: game
-    clip: {fileID: 8300000, guid: f37aa99c6f8069a4a8cd5bb26f305ebe, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: explosion
-    clip: {fileID: 8300000, guid: dc7c657fcb933ab48ac6c65d9c1e7b5a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: powerUp
-    clip: {fileID: 8300000, guid: c848cb164b22afb4b92f99d20a99366c, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  shouldLoop: 0
---- !u!4 &484440136
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484440134}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 407, y: 164, z: -675}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603484996
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +620,128 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137778432}
   m_CullTransparentMesh: 0
+--- !u!1 &1222670291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222670293}
+  - component: {fileID: 1222670292}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1222670292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222670291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c95864e992f034e82efb7858985e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: hoverSFX
+    clip: {fileID: 8300000, guid: d185f1d502a61d14ca265eb7032d43ea, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: carStartSFX
+    clip: {fileID: 8300000, guid: 22329f4950201dc4db9bf96c37254069, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: clickSFX
+    clip: {fileID: 8300000, guid: 7600490ba1659564082adb33053ea71d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ui
+    clip: {fileID: 8300000, guid: d6a31c5a8d7d9494292710106afe767c, type: 3}
+    volume: 0.45
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: game
+    clip: {fileID: 8300000, guid: f37aa99c6f8069a4a8cd5bb26f305ebe, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: explosion
+    clip: {fileID: 8300000, guid: dc7c657fcb933ab48ac6c65d9c1e7b5a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: powerUp
+    clip: {fileID: 8300000, guid: c848cb164b22afb4b92f99d20a99366c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: minusLife
+    clip: {fileID: 8300000, guid: be27dd67ee86fa74eb84eb2bd5d16049, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gameOver
+    clip: {fileID: 8300000, guid: ce1ec25e679754d4eab4045976263b0b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pickup
+    clip: {fileID: 8300000, guid: a55a91916f3e3a04f8d9f68b17290194, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: engineCut
+    clip: {fileID: 8300000, guid: 245173a968e49ee4d915e35819eb428a, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: tireSqueal
+    clip: {fileID: 8300000, guid: 6938addf4818cba49ae5b6cafe4260dd, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: brake
+    clip: {fileID: 8300000, guid: 6938addf4818cba49ae5b6cafe4260dd, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+--- !u!4 &1222670293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222670291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 407, y: 164, z: -675}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1882488931
 GameObject:
   m_ObjectHideFlags: 0
