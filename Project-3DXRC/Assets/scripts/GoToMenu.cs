@@ -4,7 +4,7 @@ using UnityEngine;
 public class GoToMenu : MonoBehaviour
 {
     public void OpenMenu() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Game Menu");
 
     }
 }
