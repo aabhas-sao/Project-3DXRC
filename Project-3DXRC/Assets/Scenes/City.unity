@@ -859,9 +859,9 @@ MonoBehaviour:
   powerUpPickableTime: 7
   currentPowerUpPickableTime: 12
   powerups:
-  - {fileID: 1672821571776999790, guid: 357f9b390e5fd954082fb6cfd2def3f1, type: 3}
+  - {fileID: 5126720326372317344, guid: ed9b607d2416369439a04f01286e4ecb, type: 3}
   - {fileID: 7476241937409439124, guid: 5f4d34ebfd11a09459e5ee600c9f5cd5, type: 3}
-  powerup: {fileID: 0}
+  powerup: {fileID: 678450005874379109, guid: c92b61a6025de904a88861b282a754ac, type: 3}
 --- !u!4 &322651369
 Transform:
   m_ObjectHideFlags: 0
