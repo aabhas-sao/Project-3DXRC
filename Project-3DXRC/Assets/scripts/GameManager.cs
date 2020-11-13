@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]private GameObject pause_ui, score_ui, game_over_ui, player;
-    [SerializeField] private GameObject settings_ui;
     public static bool alive = true;
     public int isPaused = 1, explosions =0, multiplier = 10, multiplierPowerUp = 1, per_car_multiplier=5;
     float timer, score, final_score;
@@ -20,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float currentEnemyMotorForce = -2000f;
     public float defaultEnemyMotorForce = -2000f;
     private AudioManager audioManager;
+    
     public GameObject invincible_ui;
     public GameObject star_ui;
     
@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        // set ref for pause_ui, score_ui, game_over_ui
+        pause_ui = GameObject.FindWithTag("pause_ui");
+        score_ui = GameObject.FindWithTag("score_ui");
+        game_over_ui = GameObject.FindWithTag("game_over_ui");
+
         enemyCollision = GameObject.FindObjectOfType<EnemyCollision>();
         audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
         audioManager.StopPlaying("ui");
@@ -52,8 +57,6 @@ public class GameManager : MonoBehaviour
         timer = 0f;
         explosion_count.text = "0";
         game_over_explosion.text ="0";
-        
-        // settings_ui = GameObject.FindWithTag("settings_ui");
 
         score_ui.SetActive(true);
         game_over_ui.SetActive(false);
@@ -79,8 +82,10 @@ public class GameManager : MonoBehaviour
                 currentPowerupCooldown = powerupCooldown;
             }
         }
+        // when player loses
         else
         {
+            audioManager.StopPlaying("game");
             Time.timeScale = 0f;
             game_over_ui.SetActive(true);
             score_ui.SetActive(false);  

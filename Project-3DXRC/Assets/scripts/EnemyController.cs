@@ -4,10 +4,10 @@ public class EnemyController : MonoBehaviour
 {
     private float steerAngle;
 
-    [SerializeField]private WheelCollider frontLeftWheelCollider;
-    [SerializeField]public WheelCollider frontRightWheelCollider;
-    [SerializeField]public WheelCollider rearLeftWheelCollider;
-    [SerializeField]public WheelCollider rearRightWheelCollider;
+    public WheelCollider frontLeftWheelCollider;
+    public WheelCollider frontRightWheelCollider;
+    public WheelCollider rearLeftWheelCollider;
+    public WheelCollider rearRightWheelCollider;
 
     public Transform frontLeftWheelTransform;
     public Transform frontRightWheelTransform;

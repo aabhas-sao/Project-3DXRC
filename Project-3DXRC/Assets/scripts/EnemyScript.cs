@@ -1,4 +1,4 @@
-﻿    using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -7,7 +7,7 @@ public class EnemyScript : MonoBehaviour
     private GameObject target;
     private Rigidbody enemyRb;
     private Vector3 correctedAxis;
-    private bool police = true;
+    // private bool police = true;
 
     void Start()
     {

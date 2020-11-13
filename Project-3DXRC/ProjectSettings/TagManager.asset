@@ -12,6 +12,7 @@ TagManager:
   - building
   - ground
   - high_score
+  - expired
   layers:
   - Default
   - TransparentFX

@@ -31,9 +31,9 @@ public class StarPowerUp : MonoBehaviour
         
         yield return new WaitForSeconds(gameManager.powerupActiveTime);
 
+        Destroy(power_up_ui);
         gameManager.multiplierPowerUp = 1;
 
         Destroy(gameObject);
-        Destroy(power_up_ui);
     }
 }

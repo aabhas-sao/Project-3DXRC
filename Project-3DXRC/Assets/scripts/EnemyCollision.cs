@@ -7,10 +7,11 @@ public class EnemyCollision : MonoBehaviour
     public GameObject explosionEffect;
     public int cars_destryoed = 0;
     private GameManager gameManager;
-    
+    private AudioManager audioManager;
 
     void Awake() {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
     void OnCollisionEnter(Collision collision) {
         if(gameManager.isInvincible) {
@@ -26,6 +27,7 @@ public class EnemyCollision : MonoBehaviour
     }
     
     void ExplodeEnemy() {
+        audioManager.Play("explosion");
         Destroy(gameObject);
         GameObject clone = (GameObject)Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(clone, 2.0f);

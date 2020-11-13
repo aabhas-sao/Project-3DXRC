@@ -30,10 +30,10 @@ public class InvinciblePowerUp : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(gameManager.powerupActiveTime);
+        Destroy(invincible);
         
         gameManager.isInvincible = false;
 
         Destroy(gameObject);
-        Destroy(invincible);
     }
 }

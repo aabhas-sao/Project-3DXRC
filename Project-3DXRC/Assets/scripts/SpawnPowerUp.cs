@@ -5,17 +5,22 @@ using UnityEngine;
 public class SpawnPowerUp : MonoBehaviour
 {
     private float angle; 
-    private float spawnCollisionCheckRadius = 1f;
+    // private float spawnCollisionCheckRadius = 1f;
     // create a vector with length 1.0
     Vector3 spawnPoint;
-    [SerializeField] private float minLength;
-    [SerializeField] private float maxLength;
+    [SerializeField] private float minLength = -30;
+    [SerializeField] private float maxLength = -90;
     [SerializeField] private float length = -5;
     [SerializeField] private float powerUpPickableTime = 7;
     public GameObject[] powerups;
     private GameObject player;
+    private AudioManager audioManager;
     // [SerializeField] private int infiniteLoop = 100;
     
+    void Awake() {
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
+    }
+
     void Start() {
         player = GameObject.FindWithTag("player");
     }
@@ -54,6 +59,7 @@ public class SpawnPowerUp : MonoBehaviour
         //     count++;     
         // }
     
+        audioManager.Play("powerUp");
         GameObject clone = (GameObject)Instantiate(powerup, player.transform.position + (player.transform.forward * length) , Quaternion.identity);
         yield return new WaitForSeconds(powerUpPickableTime);
         Destroy(clone);

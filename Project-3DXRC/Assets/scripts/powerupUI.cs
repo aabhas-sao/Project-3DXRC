@@ -20,6 +20,8 @@ public class powerupUI : MonoBehaviour
     {
         if(currentTime > 0) {
             currentTime -= Time.deltaTime;
+        } else {
+            Destroy(gameObject);
         }
         CircleFiller();
         ColorChanger();

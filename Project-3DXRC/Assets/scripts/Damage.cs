@@ -10,7 +10,7 @@ public class Damage : MonoBehaviour
     private int currentLife;
     public float invincibleTime = 4;
     public float currentInvincibleTime = 0;
-    private bool isColliding = false;
+    // private bool isColliding = false;
     [SerializeField]    private GameObject smokeEffect, fireEffect, explosionEffect;    
     private GameManager gameManager;
     public Image[] playerHealth;
@@ -18,9 +18,11 @@ public class Damage : MonoBehaviour
     
     public bool isInvincible; // checking if invincible powerup is active
     private EnemyController enemyController;
+    private AudioManager audioManager;
 
     void Awake() {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
 
     void Start()
@@ -53,6 +55,7 @@ public class Damage : MonoBehaviour
         }
     }
     public void ReduceLife() {
+        audioManager.Play("minusLife");
         currentLife--;
         HealthVisual();
     }
@@ -84,6 +87,7 @@ public class Damage : MonoBehaviour
         if(currentLife <=0) {
             // explosionEffect.SetActive(true);
             Debug.Log("player dead");
+            audioManager.Play("gameOver");
             GameManager.alive = false;
         }
     }

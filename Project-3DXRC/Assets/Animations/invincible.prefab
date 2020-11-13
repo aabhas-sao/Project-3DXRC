@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3776243238250141035}
   m_Layer: 5
   m_Name: invincible
-  m_TagString: Untagged
+  m_TagString: expired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

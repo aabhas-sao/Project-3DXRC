@@ -5,7 +5,6 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-    public bool shouldLoop = false;
     static AudioManager instance;
 
     void Awake() {
