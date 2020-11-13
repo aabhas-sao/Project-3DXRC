@@ -856,8 +856,8 @@ MonoBehaviour:
   spawnPoint: {x: 0, y: 0, z: 0}
   length: 2
   powerups:
-  - {fileID: 7675143717427347699, guid: 24f79362c88dab74994ae3413e290ab8, type: 3}
-  - {fileID: 7476241937409439124, guid: 5f4d34ebfd11a09459e5ee600c9f5cd5, type: 3}
+  - {fileID: 1241734625775832942, guid: b7d7a202c874ada4e9712c7016898f4c, type: 3}
+  - {fileID: 1642927703490655553, guid: 4a1a8b007f141a14488a11b59c8c7590, type: 3}
   - {fileID: 678450005874379109, guid: c92b61a6025de904a88861b282a754ac, type: 3}
   powerup: {fileID: 0}
 --- !u!4 &322651369
@@ -4473,7 +4473,7 @@ MonoBehaviour:
   powerupActiveTime: 10
   currentEnemyMotorForce: -2000
   defaultEnemyMotorForce: -2000
-  powerupCooldown: 36
+  powerupCooldown: 3
   currentPowerupCooldown: 0
 --- !u!4 &1918380207
 Transform:
