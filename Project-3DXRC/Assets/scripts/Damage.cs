@@ -7,7 +7,7 @@ public class Damage : MonoBehaviour
 {
 
     [SerializeField]private int life = 3;
-    private int currentLife;
+    public int currentLife;
     public float invincibleTime = 4;
     public float currentInvincibleTime = 0;
     // private bool isColliding = false;

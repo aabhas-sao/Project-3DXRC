@@ -11,11 +11,21 @@ public class StarPowerUp : MonoBehaviour
     private GameObject power_up_ui;
     private float width = Screen.width;
     private float height = Screen.height;
+    private AudioManager audioManager;
+
+    Coroutine selfDestroy;
+
+    void Start() {
+        audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
+        selfDestroy = StartCoroutine( DestroyPowerUp() );
+    }
 
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("player")) {
-            power_up_ui = Instantiate(star_ui, new Vector3(width/2, height - height/5, 0f), Quaternion.identity, GameObject.FindGameObjectWithTag("score_ui").transform);
+            audioManager.Play("pickup");
+            StopCoroutine(selfDestroy);
             StartCoroutine( PickUp( other ) );
+            power_up_ui = Instantiate(star_ui, new Vector3(width/2, height - height/5, 0f), Quaternion.identity, GameObject.FindGameObjectWithTag("score_ui").transform);
         }
     }
     
@@ -31,9 +41,11 @@ public class StarPowerUp : MonoBehaviour
         
         yield return new WaitForSeconds(gameManager.powerupActiveTime);
 
-        Destroy(power_up_ui);
         gameManager.multiplierPowerUp = 1;
-
+        Destroy(gameObject);
+    }
+    IEnumerator DestroyPowerUp() {
+        yield return new WaitForSeconds(12);
         Destroy(gameObject);
     }
 }

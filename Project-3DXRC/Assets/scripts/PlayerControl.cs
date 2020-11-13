@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    private float horizontalInput;
-    private float verticalInput;
+    [SerializeField]private float horizontalInput;
+    [SerializeField]private float verticalInput;
     private float steerAngle;
-    private bool isBreaking;
+    [SerializeField]private bool isBreaking;
 
     public WheelCollider frontLeftWheelCollider;
     public WheelCollider frontRightWheelCollider;
@@ -22,7 +22,14 @@ public class PlayerControl : MonoBehaviour
     public float maxSteeringAngle = 30f;
     [SerializeField]private float motorForce = 50f;
     [SerializeField]private float currentbrakeForce = 10f;
+    private AudioManager audioManager;
+    private bool isPlaying = false;
+    private bool isPlayingSqueal = false;
+    private bool isPlayingBrake = false;
 
+    private void Awake() {
+        audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
+    }
 
     private void FixedUpdate()
     {
@@ -39,11 +46,21 @@ public class PlayerControl : MonoBehaviour
         isBreaking =  Input.GetKey(KeyCode.Space);
         if(isBreaking) {
             ApplyBreaking();
+        } else if(isBreaking == false && isPlayingBrake == true) {
+            audioManager.StopPlaying("brake");
+            isPlayingBrake = false;
         }
     }
 
     private void HandleSteering()
     {
+        if((horizontalInput > 0 || horizontalInput < 0 ) && isPlayingSqueal == false && isPlayingBrake == false) {
+            audioManager.Play("tireSqueal");
+            isPlayingSqueal = true;
+        } else if(horizontalInput == 0 && isPlayingSqueal == true) {
+            audioManager.StopPlaying("tireSqueal");
+            isPlayingSqueal = false;
+        }
         steerAngle = maxSteeringAngle * horizontalInput;
         frontLeftWheelCollider.steerAngle = steerAngle;
         frontRightWheelCollider.steerAngle = steerAngle;
@@ -51,6 +68,13 @@ public class PlayerControl : MonoBehaviour
 
     private void HandleMotor()
     {
+        if(verticalInput > 0 && isPlaying == false) {
+            audioManager.Play("engineCut");
+            isPlaying = true;
+        } else if(verticalInput <= 0 && isPlaying == true) {
+            audioManager.StopPlaying("engineCut");
+            isPlaying = false;
+        }
         frontLeftWheelCollider.motorTorque = motorForce * verticalInput;
         frontRightWheelCollider.motorTorque = motorForce * verticalInput;
         currentbrakeForce = isBreaking ?currentbrakeForce: 0f;
@@ -65,6 +89,10 @@ public class PlayerControl : MonoBehaviour
     }
 
     private void ApplyBreaking() {
+        if(isPlayingBrake == false && isPlayingSqueal == false) {
+            audioManager.Play("brake");
+        }
+        isPlayingBrake = true;
         frontLeftWheelCollider.brakeTorque = currentbrakeForce;
         frontRightWheelCollider.brakeTorque = currentbrakeForce;
         rearRightWheelCollider.brakeTorque = currentbrakeForce;

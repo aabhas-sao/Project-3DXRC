@@ -11,7 +11,8 @@ public class SpawnManager : MonoBehaviour
     public float spawnTime = 3f;            // How long between each spawn.
     public float spawnDelay = 6f;
     public float spawnDistance = 10;
- 
+    public float minSpawnDistance = 10;
+    public float distance;
     void Start()
     {
         for (int i = 0; i < transform.childCount; i++) {
@@ -35,9 +36,9 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform spawnPoint = transform.GetChild(i);
-            if (Vector3.Distance(player.transform.position, spawnPoint.position) <= spawnDistance)
+            distance = Vector3.Distance(player.transform.position, spawnPoint.position);
+            if ( distance <= spawnDistance && distance >= minSpawnDistance)
             {
-                Debug.Log(Vector3.Distance(player.transform.position, spawnPoint.position));
                 near.Add(spawnPoint);
             }
         }

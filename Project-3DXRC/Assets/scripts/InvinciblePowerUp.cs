@@ -10,12 +10,21 @@ public class InvinciblePowerUp : MonoBehaviour
     private GameObject invincible;
     private float width = Screen.width;
     private float height = Screen.height;
+    private AudioManager audioManager;
+    
+    Coroutine selfDestroy;
 
+    void Start() {
+        audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
+        selfDestroy = StartCoroutine( DestroyPowerUp() );
+    }
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("player")) {
-            invincible = Instantiate(invincible_ui, new Vector3(width/2, height - height/5, 0f), Quaternion.identity, GameObject.FindGameObjectWithTag("score_ui").transform);
-            StartCoroutine( PickUp(other) );
-        }
+            audioManager.Play("pickup");
+            StopCoroutine(selfDestroy);
+            StartCoroutine(PickUp(other));
+            invincible = Instantiate(invincible_ui, new Vector3(width/2, height - height/5, 0f), Quaternion.identity, GameObject.FindGameObjectWithTag("score_ui").transform);  
+        } 
     }
 
     IEnumerator PickUp(Collider player) {
@@ -30,10 +39,14 @@ public class InvinciblePowerUp : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(gameManager.powerupActiveTime);
-        Destroy(invincible);
         
         gameManager.isInvincible = false;
 
+        Destroy(gameObject);
+    }
+
+    IEnumerator DestroyPowerUp() {
+        yield return new WaitForSeconds(12);
         Destroy(gameObject);
     }
 }

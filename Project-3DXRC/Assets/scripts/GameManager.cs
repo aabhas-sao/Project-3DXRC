@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
             currentPowerupCooldown -= Time.deltaTime;
 
             if(currentPowerupCooldown <= 0) {
-                StartCoroutine( spawnPowerUp.PowerUpPos() );
+                spawnPowerUp.PowerUpPos();
                 currentPowerupCooldown = powerupCooldown;
             }
         }
