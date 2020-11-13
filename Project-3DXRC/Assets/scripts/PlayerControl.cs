@@ -21,11 +21,12 @@ public class PlayerControl : MonoBehaviour
 
     public float maxSteeringAngle = 30f;
     [SerializeField]private float motorForce = 50f;
-    [SerializeField]private float currentbrakeForce = 10f;
+    public float currentbrakeForce = 0;
+    
+    public float brakeForce = 3000f;
+    
     private AudioManager audioManager;
     private bool isPlaying = false;
-    private bool isPlayingSqueal = false;
-    private bool isPlayingBrake = false;
 
     private void Awake() {
         audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
@@ -44,23 +45,10 @@ public class PlayerControl : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         isBreaking =  Input.GetKey(KeyCode.Space);
-        if(isBreaking) {
-            ApplyBreaking();
-        } else if(isBreaking == false && isPlayingBrake == true) {
-            audioManager.StopPlaying("brake");
-            isPlayingBrake = false;
-        }
     }
 
     private void HandleSteering()
     {
-        if((horizontalInput > 0 || horizontalInput < 0 ) && isPlayingSqueal == false && isPlayingBrake == false) {
-            audioManager.Play("tireSqueal");
-            isPlayingSqueal = true;
-        } else if(horizontalInput == 0 && isPlayingSqueal == true) {
-            audioManager.StopPlaying("tireSqueal");
-            isPlayingSqueal = false;
-        }
         steerAngle = maxSteeringAngle * horizontalInput;
         frontLeftWheelCollider.steerAngle = steerAngle;
         frontRightWheelCollider.steerAngle = steerAngle;
@@ -77,7 +65,16 @@ public class PlayerControl : MonoBehaviour
         }
         frontLeftWheelCollider.motorTorque = motorForce * verticalInput;
         frontRightWheelCollider.motorTorque = motorForce * verticalInput;
-        currentbrakeForce = isBreaking ?currentbrakeForce: 0f;
+        currentbrakeForce = isBreaking ? brakeForce : 0f;
+        if (isBreaking)
+        {
+            ApplyBreaking();
+        }
+
+        else if(Input.GetKeyUp(KeyCode.Space))
+        {
+            ResetWheels();
+        }
     }
 
     private void UpdateWheels()
@@ -89,15 +86,19 @@ public class PlayerControl : MonoBehaviour
     }
 
     private void ApplyBreaking() {
-        if(isPlayingBrake == false && isPlayingSqueal == false) {
-            audioManager.Play("brake");
-        }
-        isPlayingBrake = true;
         frontLeftWheelCollider.brakeTorque = currentbrakeForce;
         frontRightWheelCollider.brakeTorque = currentbrakeForce;
         rearRightWheelCollider.brakeTorque = currentbrakeForce;
         rearLeftWheelCollider.brakeTorque = currentbrakeForce;
     }
+
+    private void ResetWheels(){
+        frontRightWheelCollider.brakeTorque = 0f;
+        frontLeftWheelCollider.brakeTorque = 0f;
+        rearLeftWheelCollider.brakeTorque = 0f;
+        rearRightWheelCollider.brakeTorque = 0f;
+    }
+
     private void UpdateWheelPos(WheelCollider wheelCollider, Transform trans)
     {
         Vector3 pos;
