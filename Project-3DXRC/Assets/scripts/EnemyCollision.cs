@@ -6,13 +6,15 @@ public class EnemyCollision : MonoBehaviour
 {
     public GameObject explosionEffect;
     // public int cars_destryoed = 0;
-    
+    public bool ignoreFirstCollision = true;
+
     private GameManager gameManager;
     private AudioManager audioManager;
 
     void Awake() {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         audioManager = GameObject.FindObjectOfType<AudioManager>();
+        ignoreFirstCollision = true;
     }
     
     void OnCollisionEnter(Collision collision) {
@@ -24,10 +26,10 @@ public class EnemyCollision : MonoBehaviour
         }
 
         if(collision.collider.tag == "enemy" || collision.collider.tag == "building" || collision.collider.tag == "ground") {
-            // if(ignoreFirstCollision){
-            //     ignoreFirstCollision = false;
-            //     return;
-            // }
+            if(ignoreFirstCollision){
+                ignoreFirstCollision = false;
+                return;
+            }
             print("why");
             ExplodeEnemy();
         }
