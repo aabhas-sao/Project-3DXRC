@@ -20,7 +20,7 @@ public class PlayerControl : MonoBehaviour
     public Transform rearRightWheelTransform;
 
     public float maxSteeringAngle = 30f;
-    [SerializeField]private float motorForce = 50f;
+    public float motorForce = 50f;
     public float currentbrakeForce = 0;
     
     public float brakeForce = 3000f;
@@ -63,18 +63,16 @@ public class PlayerControl : MonoBehaviour
             audioManager.StopPlaying("engineCut");
             isPlaying = false;
         }
+        if (isBreaking) {
+            currentbrakeForce = brakeForce;
+        }    else {
+            currentbrakeForce = 0;
+        }
+
         frontLeftWheelCollider.motorTorque = motorForce * verticalInput;
         frontRightWheelCollider.motorTorque = motorForce * verticalInput;
         currentbrakeForce = isBreaking ? brakeForce : 0f;
-        if (isBreaking)
-        {
-            ApplyBreaking();
-        }
-
-        else if(Input.GetKeyUp(KeyCode.Space))
-        {
-            ResetWheels();
-        }
+        ApplyBreaking();
     }
 
     private void UpdateWheels()
