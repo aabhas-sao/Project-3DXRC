@@ -575,8 +575,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.6018147, y: 3.5777552, z: 11.553441}
-  m_Center: {x: -0.030900326, y: 0.1225861, z: 0.00015710082}
+  m_Size: {x: 5.6018147, y: 3.4050531, z: 11.553441}
+  m_Center: {x: -0.030900326, y: 0.20893694, z: 0.00015710082}
 --- !u!114 &6909322695842053243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,7 +613,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 2276163294515471970, guid: 42aeb22981b60d34bb3fa29a9dad2746,
     type: 3}
-  cars_destryoed: 0
 --- !u!1 &5781377532574466877
 GameObject:
   m_ObjectHideFlags: 0

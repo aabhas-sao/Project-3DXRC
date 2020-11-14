@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
     public GameObject explosionEffect;
-    public int cars_destryoed = 0;
+    // public int cars_destryoed = 0;
     
     private GameManager gameManager;
     private AudioManager audioManager;
@@ -24,6 +24,11 @@ public class EnemyCollision : MonoBehaviour
         }
 
         if(collision.collider.tag == "enemy" || collision.collider.tag == "building" || collision.collider.tag == "ground") {
+            // if(ignoreFirstCollision){
+            //     ignoreFirstCollision = false;
+            //     return;
+            // }
+            print("why");
             ExplodeEnemy();
         }
     }
