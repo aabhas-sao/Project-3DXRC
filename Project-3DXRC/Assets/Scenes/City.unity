@@ -5229,7 +5229,7 @@ Transform:
   m_GameObject: {fileID: 5328709231827326329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.021, y: 2.672, z: 41}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4862525390966498066}
   - {fileID: 1862269653}
@@ -5425,24 +5425,24 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 120000
+    spring: 100000
     damper: 12000
     targetPosition: 0.5
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 2
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &4862525390966498065
@@ -5647,24 +5647,24 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 120000
+    spring: 100000
     damper: 12000
     targetPosition: 0.5
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 2
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &4862525392410891252
@@ -5708,24 +5708,24 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 120000
+    spring: 100000
     damper: 12000
     targetPosition: 0.5
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 2
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &4862525392621073280
@@ -5769,24 +5769,24 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 120000
+    spring: 100000
     damper: 12000
     targetPosition: 0.5
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 2
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &4862525392804026418
@@ -5953,9 +5953,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5328709231827326329}
   serializedVersion: 2
-  m_Mass: 2000
-  m_Drag: 0.04
-  m_AngularDrag: 0.05
+  m_Mass: 1500
+  m_Drag: 0.5
+  m_AngularDrag: 0.4
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -5984,10 +5984,10 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 7711066320917922913}
   rearLeftWheelTransform: {fileID: 6837230820511856677}
   rearRightWheelTransform: {fileID: 5941617929762762453}
-  maxSteeringAngle: 30
-  motorForce: -2200
-  currentbrakeForce: 3000
-  brakeForce: 3000
+  maxSteeringAngle: 35
+  motorForce: -6000
+  currentbrakeForce: 0
+  brakeForce: 12000
 --- !u!114 &5328709231827326333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6139,7 +6139,7 @@ Transform:
   m_GameObject: {fileID: 6199485085788503769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2507677, y: 2.4010067, z: 42.39795}
-  m_LocalScale: {x: 4, y: 2, z: 4}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
   - {fileID: 2208632627238315964}
   - {fileID: 4812361297619545814}
