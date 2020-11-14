@@ -12,7 +12,6 @@ public class StarPowerUp : MonoBehaviour
     private float width = Screen.width;
     private float height = Screen.height;
     private AudioManager audioManager;
-
     Coroutine selfDestroy;
 
     void Start() {

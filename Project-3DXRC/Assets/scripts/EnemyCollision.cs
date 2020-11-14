@@ -6,6 +6,7 @@ public class EnemyCollision : MonoBehaviour
 {
     public GameObject explosionEffect;
     public int cars_destryoed = 0;
+    
     private GameManager gameManager;
     private AudioManager audioManager;
 
@@ -13,6 +14,7 @@ public class EnemyCollision : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
         audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
+    
     void OnCollisionEnter(Collision collision) {
         if(gameManager.isInvincible) {
             if(collision.collider.tag == "player") {
