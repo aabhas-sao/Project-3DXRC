@@ -3,7 +3,12 @@ guid: 78b58f59650163b4395f30029c2fbed1
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlowingStar
+    second: {fileID: 2100000, guid: a068fc6735512f74a970bbddbf9f42c7, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

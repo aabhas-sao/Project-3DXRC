@@ -51,7 +51,7 @@ public class Damage : MonoBehaviour
     void Update() {
         if(currentInvincibleTime >= 0) {
             currentInvincibleTime -= Time.deltaTime;
-            gameManager.currentEnemyMotorForce = 2000f;
+            gameManager.currentEnemyMotorForce = -1 * gameManager.defaultEnemyMotorForce;
         } else {
             gameManager.currentEnemyMotorForce = gameManager.defaultEnemyMotorForce;
         }
