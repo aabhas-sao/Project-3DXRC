@@ -526,7 +526,6 @@ GameObject:
   - component: {fileID: 3260290599031682087}
   - component: {fileID: 6909322695842053243}
   - component: {fileID: 3607561838212514850}
-  - component: {fileID: 2109961463657802033}
   m_Layer: 0
   m_Name: enemyCar
   m_TagString: enemy
@@ -599,7 +598,7 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 1139045805847946558}
   rearLeftWheelTransform: {fileID: 453838582782252692}
   rearRightWheelTransform: {fileID: 4192632323000998266}
-  maxSteeringAngle: 25
+  maxSteeringAngle: 18
   turnMultiplier: -1
 --- !u!114 &3607561838212514850
 MonoBehaviour:
@@ -616,25 +615,6 @@ MonoBehaviour:
   explosionEffect: {fileID: 2276163294515471970, guid: 42aeb22981b60d34bb3fa29a9dad2746,
     type: 3}
   ignoreFirstCollision: 1
---- !u!95 &2109961463657802033
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3260290599031682086}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5781377532574466877
 GameObject:
   m_ObjectHideFlags: 0
