@@ -16,7 +16,7 @@ public class carLights : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
+        if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Space)) {
             brakeLights.material = brakeLightOn;
         }
         else {

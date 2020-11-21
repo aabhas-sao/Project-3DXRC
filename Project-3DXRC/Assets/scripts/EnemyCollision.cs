@@ -19,6 +19,15 @@ public class EnemyCollision : MonoBehaviour
     
     void OnCollisionEnter(Collision collision) {
         if(gameManager.isInvincible) {
+            if(ignoreFirstCollision == false) {
+                if(collision.collider.tag == "enemy" || collision.collider.tag == "building" || collision.collider.tag == "ground") {
+                    ExplodeEnemy();
+                }
+            }
+            
+            if(ignoreFirstCollision) {
+                ignoreFirstCollision = false;
+            }
             if(collision.collider.tag == "player") {
                 ExplodeEnemy();
             }

@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
         if(target == null)
         {
             target = GameObject.FindGameObjectWithTag("player");
-            Debug.Log("target Found");
+            // Debug.Log("target Found");
             return;
         }
         
