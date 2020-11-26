@@ -28,7 +28,7 @@ public class PlayerControl : MonoBehaviour
 
     private AudioManager audioManager;
     private bool isPlaying = false;
-    private float maxVelocity = 100f;
+    private float maxVelocity = 72f;
 
     private void Awake() {
         audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));

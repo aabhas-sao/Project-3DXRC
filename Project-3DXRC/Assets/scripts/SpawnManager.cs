@@ -13,13 +13,14 @@ public class SpawnManager : MonoBehaviour
     public float spawnDistance = 1f;
     public float minSpawnDistance = 0.1f;
     public float distance;
+
     void Start()
     {
         for (int i = 0; i < transform.childCount; i++) {
             transform.GetChild(i).gameObject.SetActive(false);
         }
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
-        InvokeRepeating("Spawn", spawnTime, spawnDelay);
+        InvokeRepeating("Spawn", spawnDelay, spawnDelay);
     }
  
     void Spawn()
@@ -32,6 +33,7 @@ public class SpawnManager : MonoBehaviour
         // }
  
         // collect the children that are close.
+        
         List<Transform> near = new List<Transform>();
         for (int i = 0; i < transform.childCount; i++)
         {

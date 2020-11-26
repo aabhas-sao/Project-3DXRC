@@ -889,7 +889,7 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 7711066321534532719}
   rearLeftWheelTransform: {fileID: 6837230819853434923}
   rearRightWheelTransform: {fileID: 5941617929146095323}
-  maxSteeringAngle: 30
+  maxSteeringAngle: 25
   motorForce: -2400
   currentbrakeForce: 2000
   brakeForce: 3000

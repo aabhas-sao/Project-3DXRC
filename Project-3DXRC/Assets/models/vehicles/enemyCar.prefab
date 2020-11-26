@@ -598,7 +598,7 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 1139045805847946558}
   rearLeftWheelTransform: {fileID: 453838582782252692}
   rearRightWheelTransform: {fileID: 4192632323000998266}
-  maxSteeringAngle: 12
+  maxSteeringAngle: 15
   turnMultiplier: -1
 --- !u!114 &3607561838212514850
 MonoBehaviour:
