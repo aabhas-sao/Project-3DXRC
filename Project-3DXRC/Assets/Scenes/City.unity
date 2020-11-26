@@ -2023,8 +2023,8 @@ MonoBehaviour:
   enemy: {fileID: 3260290599031682086, guid: 5adf2bf31f986904f870e98b602b4791, type: 3}
   spawnTime: 1
   spawnDelay: 4
-  spawnDistance: 5
-  minSpawnDistance: 3
+  spawnDistance: 8
+  minSpawnDistance: 5
   distance: 0
 --- !u!1 &490966476
 GameObject:
@@ -3777,9 +3777,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty:
   - enemyMotorForce: -500
-    spawnTime: 1
+    spawnTime: 2
   - enemyMotorForce: -500
-    spawnTime: 1
+    spawnTime: 2
   - enemyMotorForce: -500
     spawnTime: 1
   - enemyMotorForce: -500
@@ -4311,7 +4311,7 @@ MonoBehaviour:
   target: {fileID: 4807786652344373187}
   distance: 2
   height: 0.5
-  heightDamping: 1
+  heightDamping: 2
   rotationOffset: {x: 0, y: 0, z: 0, w: 0}
   lookAtHeight: 0.6
   parentRigidbody: {fileID: 5328709231827326331}

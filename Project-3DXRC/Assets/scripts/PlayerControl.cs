@@ -24,12 +24,15 @@ public class PlayerControl : MonoBehaviour
     public float currentbrakeForce = 0;
     
     public float brakeForce = 3000f;
-    
+    private Rigidbody playerRb;
+
     private AudioManager audioManager;
     private bool isPlaying = false;
+    private float maxVelocity = 100f;
 
     private void Awake() {
         audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
+        playerRb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -38,6 +41,14 @@ public class PlayerControl : MonoBehaviour
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+        if(playerRb.velocity.sqrMagnitude > maxVelocity)
+        {
+            //smoothness of the slowdown is controlled by the 0.99f, 
+            //0.5f is less smooth, 0.9999f is more smooth
+            Debug.Log(playerRb.velocity);
+            playerRb.velocity *= 0.99f;
+        
+        }
     }
 
     private void GetInput()
