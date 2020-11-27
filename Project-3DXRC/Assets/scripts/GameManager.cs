@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour
         {
             audioManager.StopPlaying("game");
             audioManager.StopPlaying("engineCut");
-            audioManager.StopPlaying("tireSqueal");
             Time.timeScale = 0f;
             game_over_ui.SetActive(true);
             score_ui.SetActive(false);  
@@ -127,8 +126,9 @@ public class GameManager : MonoBehaviour
             // settings_ui.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            // AudioListener.pause = true;
-            audioManager.StopPlaying("game");
+            AudioListener.pause = true;
+            // audioManager.StopPlaying("game");
+            // audioManager.StopPlaying("engineCut");
         }
         else if(isPaused==1)
         {
@@ -139,8 +139,8 @@ public class GameManager : MonoBehaviour
             score_ui.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            // AudioListener.pause = false;
-            audioManager.Play("game");
+            AudioListener.pause = false;
+            // audioManager.Play("game");
         }
     }
 
@@ -163,10 +163,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("MainMenu");
         SceneManager.LoadScene("Game Menu");
-        // if(AudioListener.pause) {
-        //     AudioListener.pause = false;
-        // }
+        if(AudioListener.pause) {
+            AudioListener.pause = false;
+        }
         audioManager.StopPlaying("game");
+        audioManager.StopPlaying("engineCut");
         audioManager.Play("ui");
     }
     

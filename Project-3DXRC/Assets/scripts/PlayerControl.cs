@@ -22,7 +22,9 @@ public class PlayerControl : MonoBehaviour
     public float maxSteeringAngle = 30f;
     public float motorForce = 50f;
     public float currentbrakeForce = 0;
-    
+    public float threshold = 5f;
+    public float rawAngle;
+
     public float brakeForce = 3000f;
     private Rigidbody playerRb;
 
@@ -53,14 +55,26 @@ public class PlayerControl : MonoBehaviour
 
     private void GetInput()
     {
+        
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         isBreaking =  Input.GetKey(KeyCode.Space);
     }
 
     private void HandleSteering()
-    {
-        steerAngle = maxSteeringAngle * horizontalInput;
+    {   
+        if( horizontalInput == 0){ 
+            steerAngle = 0;
+            rawAngle = 0;    
+        }
+        else {
+            Debug.Log(horizontalInput);
+            rawAngle += horizontalInput * Time.deltaTime * threshold;
+            Debug.Log(rawAngle);
+            steerAngle = Mathf.Clamp(rawAngle, -1 * maxSteeringAngle, maxSteeringAngle);
+            Debug.Log(steerAngle);
+        }
+        
         frontLeftWheelCollider.steerAngle = steerAngle;
         frontRightWheelCollider.steerAngle = steerAngle;
     }

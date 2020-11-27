@@ -39,7 +39,7 @@ public class EnemyCollision : MonoBehaviour
                 ignoreFirstCollision = false;
                 return;
             }
-            print("why");
+            // print("why");
             ExplodeEnemy();
         }
     }

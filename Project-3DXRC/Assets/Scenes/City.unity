@@ -559,78 +559,77 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 1
   - name: carStartSFX
     clip: {fileID: 8300000, guid: 22329f4950201dc4db9bf96c37254069, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 1
   - name: clickSFX
     clip: {fileID: 8300000, guid: 7600490ba1659564082adb33053ea71d, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 1
   - name: ui
     clip: {fileID: 8300000, guid: d6a31c5a8d7d9494292710106afe767c, type: 3}
     volume: 0.45
     pitch: 1
     loop: 1
     source: {fileID: 0}
+    ignoreLP: 0
   - name: game
     clip: {fileID: 8300000, guid: f37aa99c6f8069a4a8cd5bb26f305ebe, type: 3}
     volume: 0.4
     pitch: 1
     loop: 1
     source: {fileID: 0}
+    ignoreLP: 0
   - name: explosion
     clip: {fileID: 8300000, guid: dc7c657fcb933ab48ac6c65d9c1e7b5a, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 0
   - name: powerUp
     clip: {fileID: 8300000, guid: c848cb164b22afb4b92f99d20a99366c, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 0
   - name: minusLife
     clip: {fileID: 8300000, guid: be27dd67ee86fa74eb84eb2bd5d16049, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 0
   - name: gameOver
     clip: {fileID: 8300000, guid: ce1ec25e679754d4eab4045976263b0b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 0
   - name: pickup
     clip: {fileID: 8300000, guid: a55a91916f3e3a04f8d9f68b17290194, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    ignoreLP: 0
   - name: engineCut
     clip: {fileID: 8300000, guid: 245173a968e49ee4d915e35819eb428a, type: 3}
     volume: 0.35
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: tireSqueal
-    clip: {fileID: 8300000, guid: 6938addf4818cba49ae5b6cafe4260dd, type: 3}
-    volume: 0.2
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: brake
-    clip: {fileID: 8300000, guid: 6938addf4818cba49ae5b6cafe4260dd, type: 3}
-    volume: 0.2
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
+    ignoreLP: 0
 --- !u!4 &120876683
 Transform:
   m_ObjectHideFlags: 0
@@ -9618,6 +9617,8 @@ MonoBehaviour:
   maxSteeringAngle: 20
   motorForce: -6000
   currentbrakeForce: 0
+  threshold: 100
+  rawAngle: 0
   brakeForce: 6000
 --- !u!114 &5328709231827326333
 MonoBehaviour:

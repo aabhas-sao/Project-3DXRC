@@ -50,7 +50,7 @@ public class SpawnManager : MonoBehaviour
             int spawnPointIndex = Random.Range(0, near.Count);
  
             // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
-            GameObject instance = (GameObject)Instantiate(enemy, near[spawnPointIndex].position, near[spawnPointIndex].rotation);
+            GameObject instance = (GameObject)Instantiate(enemy, near[spawnPointIndex].position, player.transform.rotation * Quaternion.Euler(0, 180 ,0));
         }
     }
 }
