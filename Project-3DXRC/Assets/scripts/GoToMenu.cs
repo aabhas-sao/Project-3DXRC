@@ -5,6 +5,5 @@ public class GoToMenu : MonoBehaviour
 {
     public void OpenMenu() {
         SceneManager.LoadScene("Game Menu");
-
     }
 }
