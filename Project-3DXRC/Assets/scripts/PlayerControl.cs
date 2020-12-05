@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
     public Transform rearLeftWheelTransform;
     public Transform rearRightWheelTransform;
 
-    public float maxSteeringAngle = 30f;
+    public float maxSteeringAngle = 13f;
     public float motorForce = 50f;
     public float currentbrakeForce = 0;
     public float threshold = 5f;
@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
 
     private AudioManager audioManager;
     private bool isPlaying = false;
-    private float maxVelocity = 72f;
+    public float maxVelocity = 72f;
 
     private void Awake() {
         audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
@@ -43,14 +43,14 @@ public class PlayerControl : MonoBehaviour
         HandleMotor();
         HandleSteering();
         UpdateWheels();
-        if(playerRb.velocity.sqrMagnitude > maxVelocity)
-        {
-            //smoothness of the slowdown is controlled by the 0.99f, 
-            //0.5f is less smooth, 0.9999f is more smooth
-            Debug.Log(playerRb.velocity);
-            playerRb.velocity *= 0.99f;
+        // if(playerRb.velocity.sqrMagnitude > maxVelocity)
+        // {
+        //     //smoothness of the slowdown is controlled by the 0.99f, 
+        //     //0.5f is less smooth, 0.9999f is more smooth
+        //     Debug.Log(playerRb.velocity);
+        //     playerRb.velocity *= 0.99f;
         
-        }
+        // }
     }
 
     private void GetInput()
@@ -63,18 +63,19 @@ public class PlayerControl : MonoBehaviour
 
     private void HandleSteering()
     {   
-        if( horizontalInput == 0){ 
-            steerAngle = 0;
-            rawAngle = 0;    
-        }
-        else {
-            Debug.Log(horizontalInput);
-            rawAngle += horizontalInput * Time.deltaTime * threshold;
-            Debug.Log(rawAngle);
-            steerAngle = Mathf.Clamp(rawAngle, -1 * maxSteeringAngle, maxSteeringAngle);
-            Debug.Log(steerAngle);
-        }
+        // if( horizontalInput == 0){ 
+        //     steerAngle = 0;
+        //     rawAngle = 0;    
+        // }
+        // else {
+        //     Debug.Log(horizontalInput);
+        //     rawAngle += horizontalInput * Time.deltaTime * threshold;
+        //     Debug.Log(rawAngle);
+        //     steerAngle = Mathf.Clamp(rawAngle, -1 * maxSteeringAngle, maxSteeringAngle);
+        //     Debug.Log(steerAngle);
+        // }
         
+        steerAngle = horizontalInput * maxSteeringAngle;
         frontLeftWheelCollider.steerAngle = steerAngle;
         frontRightWheelCollider.steerAngle = steerAngle;
     }

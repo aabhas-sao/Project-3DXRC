@@ -90,6 +90,8 @@ public class GameManager : MonoBehaviour
             audioManager.StopPlaying("game");
             audioManager.StopPlaying("engineCut");
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             game_over_ui.SetActive(true);
             score_ui.SetActive(false);  
             score_end.text = (timer).ToString("0");
