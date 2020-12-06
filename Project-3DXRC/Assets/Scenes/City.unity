@@ -19970,7 +19970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &508714885763065144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20540,7 +20540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4183009878842680422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 206582818142060246, guid: f1a8f4a25d182f440b1a10ab702eb941,
