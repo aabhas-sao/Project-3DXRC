@@ -1,5 +1,8 @@
 # Project-3DXRC
 
+## Story
+Tony owns a small car garage in a sub-urb. Struggling to make ends meet, he decides to join the illegal street racing club in the city. When Tony's rival Nick frames him for the murder of a wealthy businessman, he is actively hunted by the city police who have been bribed to shoot him at sight. Play the game to help Tony evade the chasing police vehicles for as long as possible!
+
 ## 📝 Instructions to download and play
 - Go to https://gamejolt.com/games/chase/561332 download the zip file.
 - Unzip the contents of folder
