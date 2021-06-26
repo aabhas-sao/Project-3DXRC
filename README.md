@@ -7,12 +7,14 @@
 - Run chase.exe 😏
 
 ## 📱 Screenshots
-![2020-11-28-18-nzeaxvnv](https://user-images.githubusercontent.com/58210877/123508487-6cdba980-d68d-11eb-9544-a621b6bf2cfb.png)
-![2020-11-28-3-bdwyfqdh](https://user-images.githubusercontent.com/58210877/123508497-7bc25c00-d68d-11eb-8572-e8e141f5dbde.png)
-![2020-11-28-10-zgkabskf](https://user-images.githubusercontent.com/58210877/123508521-8e3c9580-d68d-11eb-8427-d17695bd899c.png)
-![2020-11-28-13-6aksxmwy](https://user-images.githubusercontent.com/58210877/123508524-8f6dc280-d68d-11eb-83fc-c0c3a3f5874f.png)
-![2020-11-28-14-e42anugx](https://user-images.githubusercontent.com/58210877/123508525-91378600-d68d-11eb-8338-caa0359bf559.png)
-
+<p style="img {width: 200;}">
+  <img src="https://user-images.githubusercontent.com/58210877/123508487-6cdba980-d68d-11eb-9544-a621b6bf2cfb.png" />
+  <img src="https://user-images.githubusercontent.com/58210877/123508497-7bc25c00-d68d-11eb-8572-e8e141f5dbde.png" />
+  <img src="https://user-images.githubusercontent.com/58210877/123508521-8e3c9580-d68d-11eb-8427-d17695bd899c.png" />
+  <img src="https://user-images.githubusercontent.com/58210877/123508497-7bc25c00-d68d-11eb-8572-e8e141f5dbde.png" />
+  <img src="https://user-images.githubusercontent.com/58210877/123508524-8f6dc280-d68d-11eb-83fc-c0c3a3f5874f.png" />
+  <img src="https://user-images.githubusercontent.com/58210877/123508525-91378600-d68d-11eb-8338-caa0359bf559.png" />
+</p>
 
 ## 👏 Credits
 - Game Mechanics: Suyash Verma
