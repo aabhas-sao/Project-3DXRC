@@ -17,8 +17,9 @@
 </p>
 
 ## 👏 Credits
-- Game Mechanics: Suyash Verma
+- Game Mechanics: Suyash Verma, Aabhas Sao
 - Environment Design: Rajiv Singh
-- 3D Design: Rajiv Singh, Anubhav Maharana
+- 3D Design: Rajiv Singh, Anubhab Maharana
 - Sounds and SFX: Ajinkya Bakshi
 - Animations: Upasana Choudhury
+- UI: Aabhas Sao
