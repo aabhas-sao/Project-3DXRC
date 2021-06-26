@@ -22,7 +22,7 @@ Tony owns a small car garage in a sub-urb. Struggling to make ends meet, he deci
 ## 👏 Credits
 - Game Mechanics: Suyash Verma, Aabhas Sao
 - Environment Design: Rajiv Singh
-- 3D Design: Rajiv Singh, Anubhab Maharana
+- 3D Assets Design: Rajiv Singh, Anubhab Maharana
 - Sounds and SFX: Ajinkya Bakshi
 - Animations: Upasana Choudhury
 - UI: Aabhas Sao
